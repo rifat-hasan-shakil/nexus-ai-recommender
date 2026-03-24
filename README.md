@@ -19,6 +19,19 @@ Unlike basic prototypes, Nexus AI features a deeply optimized **FastAPI Backend*
 1. **Premium Web Application**: A flawless Vanilla JS Single Page Application (SPA) styled with Tailwind CSS, featuring glassmorphism, native search autocompletion, hover overlays, and dynamic Light/Dark mode.
 2. **Streamlit App**: A sleek Python-based frontend that perfectly mimics the premium web app for rapid data-science demonstrations.
 
+## 📸 Screenshots
+Here is a highlight of the Premium UI, dynamic search, and cinematic hover overlays built entirely in Vanilla JS and Tailwind CSS!
+
+<div align="center">
+  <img src="screenshots/Screenshot%202026-03-25%20002219.png" width="800" style="border-radius: 10px; margin-bottom: 10px;">
+  <img src="screenshots/Screenshot%202026-03-25%20002235.png" width="800" style="border-radius: 10px; margin-bottom: 10px;">
+  <img src="screenshots/Screenshot%202026-03-25%20002259.png" width="800" style="border-radius: 10px; margin-bottom: 10px;">
+  <img src="screenshots/Screenshot%202026-03-25%20001944.png" width="800" style="border-radius: 10px; margin-bottom: 10px;">
+  <img src="screenshots/Screenshot%202026-03-25%20001956.png" width="800" style="border-radius: 10px; margin-bottom: 10px;">
+</div>
+
+---
+
 ## ✨ Key Features
 - **Dual ML Domains**: Independent vector spaces for `TMDB 5000 Movies` and `MyAnimeList` datasets.
 - **Lightning Fast Inference**: Reduces 6-second API cold-starts to `0.5s` using ThreadPool concurrency, and `0.00s` for cached searches.

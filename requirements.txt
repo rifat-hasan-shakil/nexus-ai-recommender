@@ -1,0 +1,8 @@
+pandas==2.2.0
+numpy
+scikit-learn
+fastapi
+uvicorn
+pydantic
+requests
+streamlit
