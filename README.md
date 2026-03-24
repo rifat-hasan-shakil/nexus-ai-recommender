@@ -1,6 +1,4 @@
 <div align="center">
-  <img src="https://via.placeholder.com/800x200/0b0c10/e50914?text=Nexus+AI:+Recommendation+Engine" alt="Nexus AI Banner">
-  
   <h1>🍿 Nexus AI Recommendation Engine</h1>
   <p><strong>A high-performance, dual-domain Machine Learning Recommendation System for Movies and Anime.</strong></p>
 
@@ -10,49 +8,58 @@
   [![UI](https://img.shields.io/badge/Frontend-Vanilla_JS_+_Tailwind-38bdf8.svg)](https://tailwindcss.com/)
 </div>
 
+<br>
+
+> **Nexus AI** is a personal passion project of mine built to explore the fascinating intersection of Natural Language Processing and seamless web development. It leverages advanced **Content-Based Filtering** to algorithmically match and recommend movies and anime based on user affinity. 
+
+<br>
+
+## 📋 Table of Contents
+1. [📸 Visual Showcase](#-visual-showcase)
+2. [✨ Key Features](#-key-features)
+3. [🚀 Architecture](#-architecture)
+4. [⚙️ Installation & Setup](#️-installation--setup)
+5. [🧠 Machine Learning Approach](#-machine-learning-approach)
+
 ---
 
-## 📖 Overview
-**Nexus AI** is a personal passion project of mine built to explore the fascinating intersection of Natural Language Processing and seamless web development. It is a portfolio-grade machine learning application that uses **Content-Based Filtering** (`CountVectorizer` and `Cosine Similarity`) to recommend movies and anime based on a user's favorite titles. 
-
-Unlike basic prototypes, Nexus AI features a deeply optimized **FastAPI Backend**, an asynchronous in-memory caching system (`@lru_cache` + `ThreadPoolExecutor`), and two distinct frontends:
-1. **Premium Web Application**: A flawless Vanilla JS Single Page Application (SPA) styled with Tailwind CSS, featuring glassmorphism, native search autocompletion, hover overlays, and dynamic Light/Dark mode.
-2. **Streamlit App**: A sleek Python-based frontend that perfectly mimics the premium web app for rapid data-science demonstrations.
-
-## 📸 Screenshots
-Here is a highlight of the Premium UI, dynamic search, and cinematic hover overlays built entirely in Vanilla JS and Tailwind CSS!
+## 📸 Visual Showcase
+<p align="center"><i>A highlight of the Premium UI, dynamic search, and cinematic hover overlays built entirely in Vanilla JS and Tailwind CSS.</i></p>
 
 <div align="center">
-  <img src="screenshots/Screenshot%202026-03-25%20002219.png" width="800" style="border-radius: 10px; margin-bottom: 10px;">
-  <img src="screenshots/Screenshot%202026-03-25%20002235.png" width="800" style="border-radius: 10px; margin-bottom: 10px;">
-  <img src="screenshots/Screenshot%202026-03-25%20002259.png" width="800" style="border-radius: 10px; margin-bottom: 10px;">
-  <img src="screenshots/Screenshot%202026-03-25%20001944.png" width="800" style="border-radius: 10px; margin-bottom: 10px;">
-  <img src="screenshots/Screenshot%202026-03-25%20001956.png" width="800" style="border-radius: 10px; margin-bottom: 10px;">
+  <img src="screenshots/Screenshot%202026-03-25%20002219.png" width="800" style="border-radius: 12px; box-shadow: 0px 4px 15px rgba(0,0,0,0.2); margin-bottom: 20px;">
+  <img src="screenshots/Screenshot%202026-03-25%20002235.png" width="800" style="border-radius: 12px; box-shadow: 0px 4px 15px rgba(0,0,0,0.2); margin-bottom: 20px;">
+  <img src="screenshots/Screenshot%202026-03-25%20002259.png" width="800" style="border-radius: 12px; box-shadow: 0px 4px 15px rgba(0,0,0,0.2); margin-bottom: 20px;">
+  <img src="screenshots/Screenshot%202026-03-25%20001944.png" width="800" style="border-radius: 12px; box-shadow: 0px 4px 15px rgba(0,0,0,0.2); margin-bottom: 20px;">
+  <img src="screenshots/Screenshot%202026-03-25%20001956.png" width="800" style="border-radius: 12px; box-shadow: 0px 4px 15px rgba(0,0,0,0.2); margin-bottom: 20px;">
 </div>
 
 ---
 
 ## ✨ Key Features
-- **Dual ML Domains**: Independent vector spaces for `TMDB 5000 Movies` and `MyAnimeList` datasets.
-- **Lightning Fast Inference**: Reduces 6-second API cold-starts to `0.5s` using ThreadPool concurrency, and `0.00s` for cached searches.
-- **Micro-Badges & Granular Metadata**: Dynamically scrapes live runtime, studios, genres, and release years via TMDB and Jikan APIs.
-- **Cinematic UI**: Netflix-style hover-cards with glassmorphic overlays.
+- ⚡ **Lightning Fast Inference**: Reduces standard 6-second API cold-starts to **0.5s** using `ThreadPool` concurrency, with **0.00s** latency on cached recurrent searches via `@lru_cache`.
+- 🧬 **Dual ML Domains**: Independent vector spaces for `TMDB 5000 Movies` and the `MyAnimeList` datasets.
+- 🏷️ **Granular Metadata Scrapers**: Dynamically scrapes live runtime, studios, genres, and release dates via REST integration with TMDB and Jikan APIs.
+- 🎨 **Premium UI/UX**: Netflix-inspired glassmorphic overlays, responsive fluid grids, and a highly polished Light/Dark mode mechanic.
+- 🐍 **Streamlit Prototype**: A robust Python-only interactive variant created specifically for rapid data-science demonstrations.
 
 ---
 
 ## 🚀 Architecture
+
 ```text
-├── api/
-│   └── main.py              # FastAPI server (Endpoints, Caching, Live TMDB/Jikan API Scraping)
-├── data/                    # Raw CSV Datasets
-├── frontend/                
-│   └── index.html           # High-Performance Vanilla JS + Tailwind SPA
-├── models/                  # Pickled ML models (Similarity Matrices, Pandas Dictionaries)
-├── src/
-│   └── train.py             # NLP Feature Engineering & Vectorization logic
-├── streamlit_app.py         # Python-only Interactive UI
-├── Kaggle_Notebook.ipynb    # Jupyter Notebook for Kaggle Portfolio
-└── requirements.txt         # Dependencies
+📦 nexus-ai-recommendation
+├── 📁 api/
+│   └── 📄 main.py              # FastAPI server (Endpoints, Caching, Live Scrapers)
+├── 📁 data/                    # Raw CSV Datasets
+├── 📁 frontend/                
+│   └── 📄 index.html           # High-Performance Vanilla JS + Tailwind SPA
+├── 📁 models/                  # Pickled ML models (Similarity Matrices, Pandas Dictionaries)
+├── 📁 src/
+│   └── 📄 train.py             # NLP Feature Engineering & Vectorization logic
+├── 📄 streamlit_app.py         # Python-only Interactive UI
+├── 📄 Kaggle_Notebook.ipynb    # Jupyter Notebook export for Kaggle Portfolio
+└── 📄 requirements.txt         # Dependencies
 ```
 
 ---
@@ -66,37 +73,33 @@ cd nexus-ai-recommendation
 pip install -r requirements.txt
 ```
 
-### 2. Train the Models
-*(Note: If the `models/` directory already contains the `.pkl` files, you can skip this step.)*
+### 2. Synthesize the Models
+*(Note: Skip this step if the compiled `.pkl` files already exist within the `/models` directory.)*
 ```bash
 python src/train.py
 ```
-This script will parse the raw CSV data, run the `CountVectorizer`, compute the `Cosine Similarity` matrix, and pickle the resulting structures to your hard drive.
+This script acts as the core engine pipeline: it parses the raw CSV datasets, standardizes the NLP entities, executes the `CountVectorizer`, computes the `Cosine Similarity` matrices, and serializes the state to disk.
 
-### 3. Run the Backend (FastAPI + HTML Frontend)
-To launch the core engine and the premium web application:
+### 3. Launch Application (FastAPI + HTML Engine)
 ```bash
 uvicorn api.main:app --host 127.0.0.1 --port 8000
 ```
-Open **`http://localhost:8000`** in your browser.
+*(Navigate to **`http://localhost:8000`** in your browser)*
 
-### 4. Run the Streamlit Prototype
-To run the pure-Python UI variant:
+### 4. Launch Streamlit Prototype
 ```bash
 streamlit run streamlit_app.py
 ```
-Open **`http://localhost:8501`** in your browser.
+*(Navigate to **`http://localhost:8501`** in your browser)*
 
 ---
 
 ## 🧠 Machine Learning Approach
-We adopted a **Content-Based Filtering** architecture because user-item collaborative filtering data was sparse.
-1. **Feature Engineering**: We extracted strings from JSON arrays (e.g. `cast`, `crew`, `genres`, `synopsis`).
-2. **Tag Generation**: Spaces were stripped from entity names (e.g., `Johnny Depp` -> `JohnnyDepp`) so that the NLP vectorizer treats specific people / studios as unique continuous tokens.
-3. **Vectorization**: `sklearn.feature_extraction.text.CountVectorizer` was used with a strict 5000 max-features limit and English stop-words removed.
-4. **Distance Calculation**: The `cosine_similarity` algorithm mapped the angular distances between the 5000-dimensional vectors, allowing the backend to immediately slice the top 5 nearest neighbors.
+A **Content-Based Filtering** architecture was selected due to the sparsity of organic user-item collaborative data. The pipeline workflow consists of:
+1. **Extraction & Standardization**: Messy, stringified JSON arrays (e.g. `cast`, `crew`, `genres`, `synopsis`) are mapped and stripped of spaces (`Johnny Depp` -> `JohnnyDepp`) so the tokenizer treats people/studios as continuous, uniquely bounded tokens.
+2. **Dimensionality Reduction**: `CountVectorizer` embeds the tokens holding a strict `5000` multi-dimensional limit with English `stop_words` stripped out.
+3. **Similarity Calculation**: Vectors are cast into a `cosine_similarity` model mapping angular distance, yielding an instantaneous neighbor-search index.
 
 ---
 
-## 🤝 Contributing
-Feel free to open issues or fork the repository to add Hybrid-Recommendation models or enhance the UI!
+<p align="center"><i>If you found this project interesting, feel free to ⭐ the repository!</i></p>
